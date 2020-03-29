@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="js/todo.js"></script>
+    <title>Todo List</title>
+</head>
+
+<body onload="init()" style="background-color: #d2dae2;">
+    <div class="container">
+        <h1 class="text-center ">Todo List</h1>
+        <form class="text-left border border-light p-5" action="#!">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <h5>Enter Your Todo For Register:</h5>
+                    <fieldset>
+                        <level for="inputId">Id</level>
+                        <input type="text" placeholder="Enter your id" id="id">
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <level for="inputName">Name</level>
+                        <input type="text" placeholder="Enter your name" id="name">
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <level for="inputDate">Date</level>
+                        <input type="date" placeholder="Enter date" id="date">
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <level for="priority">Priority</level>
+                        <select id="priority">
+                        <option value="high">High</option>
+                        <option value="low">Low</option>
+                    </select>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <livel for="submit">&nbsp;</livel>
+                        <button class="btn btn-success" id="submit" onclick="registerButton()">Register</button>
+                        <button class="btn btn-success" id="clear" onclick="onClearPressed()">Clear</button>
+
+                    </fieldset>
+                </div>
+            </div>
+        </form>
+        <input class="container text-center" type="text" id="myInput" onkeyup="filterFunction()" placeholder="Search for names.." title="Type in a name">
+        <div class="container text-center">
+            <!-- <h3 class="text-center">Sort</h3> -->
+            <!-- <button class="btn btn-primary" onclick="sort_table()">Sort (Date)</button> -->
+            <!-- <button class="btn btn-primary" onclick="sort_table()">Sort (Priority)</button> -->
+        </div>
+        <table class="table" id="regtable">
+            <thead>
+                <tr>
+                    <!-- <th>Id</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Priority</th> -->
+
+                    <th onclick="sort_table(people, 0, asc1); asc1 *= -1; asc2 = 1; asc3 = 1; asc4 = 1;">Id</th>
+                    <th onclick="sort_table(people, 1, asc2); asc2 *= -1; asc3 = 1; asc4 = 1; asc1 = 1;">Name</th>
+                    <th onclick="sort_table(people, 2, asc3); asc3 *= -1; asc4 = 1; asc1 = 1; asc2 = 1;">Date</th>
+                    <th onclick="sort_table(people, 3, asc3); asc4 *= -1; asc1 = 1; asc2 = 1; asc3 = 1;">Priority</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tablerow">
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+</body>
+
+</body>
+
+</html>
